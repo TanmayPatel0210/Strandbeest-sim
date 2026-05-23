@@ -5,11 +5,20 @@ const pointA = {x:270, y:300}
 let pointB = {x:500, y:300}
 let isDragging = false
 let grabbingradius = 15
-let rodLength = 170
 let angle = 0
 const groundAnchor = {x:350, y:300 }
-const rod2 = 170
-const rod3 = 170
+const rodAB = 170
+const rodBD = 170
+const rodBG = 170
+const rodDE = 170
+const rodCE = 170
+const rodCG = 170
+const rodGF = 170
+const rodEF = 170
+const rodFH = 170
+const rodGH = 170
+
+
 
 function draw()
 {
@@ -18,8 +27,8 @@ ctx.fillRect(0, 0, canvas.width, canvas.height)
 
     //calc for point B
 
-    pointB.x = pointA.x + rodLength*Math.cos(angle)
-    pointB.y = pointA.y + rodLength*Math.sin(angle)
+    pointB.x = pointA.x + rod1*Math.cos(angle)
+    pointB.y = pointA.y + rod1*Math.sin(angle)
     angle += 0.02
 
     //point C draw
