@@ -13,14 +13,14 @@ const rod3 = 170
 
 function draw()
 {
-ctx.fillStyle = "rgba(0, 0, 0, 0.05)"
+ctx.fillStyle = "rgba(0, 0, 0, 0.5)"
 ctx.fillRect(0, 0, canvas.width, canvas.height)
 
     //calc for point B
 
     pointB.x = pointA.x + rodLength*Math.cos(angle)
     pointB.y = pointA.y + rodLength*Math.sin(angle)
-    angle += 0.05
+    angle += 0.02
 
     //point C draw
 
