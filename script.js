@@ -2,7 +2,7 @@ const canvas = document.getElementById("myCanvas");
 const ctx = canvas.getContext("2d")
 
 const pointA = {x:300, y:300}
-const groundAnchor = {x:376, y:300}
+const groundAnchor = {x:400, y:300}
 
 const rod_AB = 38
 const rod_BD = 83
@@ -39,14 +39,14 @@ function draw()
     ctx.fillRect(0, 0, canvas.width, canvas.height)
 
     let B = {
-        x: pointA.x +rod_AB * Math.cos(angle),
-        y: pointA.y + rod_AB * Math.sin(angle)
+        x: pointA.x +rod_AB * Math.sin(angle),
+        y: pointA.y + rod_AB * Math.cos(angle)
     }
     let D = getPoint(B, groundAnchor, rod_BD, rod_CD, 1)
     let G = getPoint(B, groundAnchor, rod_BG, rod_CG, -1)
     let E = getPoint(D, groundAnchor, rod_DE, rod_CE, 1)
     let F = getPoint(E, G, rod_EF, rod_GF, 1)
-    let H = getPoint(G, F, rod_GH, rod_FH, 1)
+    let H = getPoint(G, F, rod_GH, rod_FH, -1)
 
     function drawRod(p1, p2, color = "white")
     {
@@ -56,6 +56,26 @@ function draw()
         ctx.strokeStyle = color
         ctx.lineWidth = 2
         ctx.stroke()
+    }
+
+    drawRod(pointA, B, "red")
+    drawRod(B, D, "cyan")
+    drawRod(B, G, "cyan")
+    drawRod(groundAnchor, D, "blue")
+    drawRod(groundAnchor, G, "blue")
+    drawRod(D, E, "magenta")
+    drawRod(groundAnchor, E, "magenta")
+    drawRod(E, F, "green")
+    drawRod(G, F, "green")
+    drawRod(G, H, "yellow")
+    drawRod(F, H, "yellow")
+
+    function drawPoint(p, color)
+    {
+        ctx.beginPath()
+        ctx.arc(p.x, p.y, 6, 0, Math.PI * 2)
+        ctx.fillStyle = color
+        ctx.fill()
     }
 
     drawPoint(pointA, "white")
