@@ -1,5 +1,5 @@
 const canvas = document.getElementById("myCanvas");
-const ctx = canvas.getContext(2d)
+const ctx = canvas.getContext("2d")
 
 const pointA = {x:300, y:300}
 const groundAnchor = {x:376, y:300}
