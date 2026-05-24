@@ -1,8 +1,13 @@
 const canvas = document.getElementById("myCanvas");
 const ctx = canvas.getContext("2d")
 
-const pointA = {x:300, y:300}
-const groundAnchor = {x:400, y:300}
+const trailCanvas = document.getElementById("trailCanvas")
+const trailCtx = trailCanvas.getContext("2d")
+
+
+
+const pointA = {x:220, y:220}
+const groundAnchor = {x:320, y:220}
 
 const rod_AB = 38
 const rod_BD = 83
@@ -11,12 +16,13 @@ const rod_AD = 124
 const rod_DE = 111
 const rod_CE = 79
 const rod_EF = 131
-const rod_GF = 87
-const rod_BG = 107
+const rod_GF = 80
+const rod_BG = 105
 const rod_CG = 49
-const rod_GH = 100
-const rod_FH = 122
+const rod_GH = 110
+const rod_FH = 115
 
+let isPaused = false
 let angle = 0
 
 function getPoint(p1, p2, r1, r2, sign = 1)
@@ -33,20 +39,26 @@ function getPoint(p1, p2, r1, r2, sign = 1)
     }
 }
 
-function draw()
+function drawLeg(angleOffset)
 {
-    ctx.fillStyle = "rgba(0, 0, 0, 0.1)"
-    ctx.fillRect(0, 0, canvas.width, canvas.height)
+
+
 
     let B = {
-        x: pointA.x +rod_AB * Math.sin(angle),
-        y: pointA.y + rod_AB * Math.cos(angle)
+        x: pointA.x +rod_AB * Math.sin(angle + angleOffset),
+        y: pointA.y + rod_AB * Math.cos(angle + angleOffset)
     }
     let D = getPoint(B, groundAnchor, rod_BD, rod_CD, 1)
     let G = getPoint(B, groundAnchor, rod_BG, rod_CG, -1)
     let E = getPoint(D, groundAnchor, rod_DE, rod_CE, 1)
     let F = getPoint(E, G, rod_EF, rod_GF, 1)
     let H = getPoint(G, F, rod_GH, rod_FH, -1)
+
+
+
+
+
+
 
     function drawRod(p1, p2, color = "white")
     {
@@ -87,10 +99,53 @@ function draw()
     drawPoint(F, "green")
     drawPoint(H, "yellow")
 
-    angle += 0.02
-    requestAnimationFrame(draw)
+    trailCtx.fillStyle = "rgba(0, 0, 0, 0.02)"
+    trailCtx.fillRect(0, 0, canvas.width, canvas.height)
+
+    trailCtx.beginPath()
+    trailCtx.arc(H.x, H.y, 2, 0, Math.PI*2)
+    trailCtx.fillStyle = "rgba(255, 255, 0, 0.8)"
+
+    trailCtx.fill()
+
+    
+
+
+
 
 }
 
+
+function draw()
+{
+
+    ctx.clearRect(0, 0, canvas.width, canvas.height)
+
+    let speed = document.getElementById("slider").value
+
+    drawLeg(0)
+    drawLeg(Math.PI/2)
+    drawLeg(Math.PI)
+    drawLeg(Math.PI*1.5)
+
+    if (isPaused) return
+
+    angle += parseFloat(speed)
+    requestAnimationFrame(draw)
+}
+
 draw()
+
+document.getElementById("pauseBtn").addEventListener("click", function()
+                                                            {
+                                                                if(isPaused == false)
+                                                                {
+                                                                    isPaused = true
+                                                                }
+                                                                else
+                                                                {
+                                                                    isPaused = false
+                                                                    draw()
+                                                                }
+                                                            })
 
