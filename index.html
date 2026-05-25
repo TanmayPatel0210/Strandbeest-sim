@@ -4,20 +4,20 @@
     <title>The Strandbeest Sim</title>
     <link rel="stylesheet" href="style.css">
   </head>
-  <body>
+  <body id="body">
     <div style="position: relative;">
-      <canvas id="trailCanvas" width="600" height="600" style="position: absolute; top: 0; left: 0;"></canvas>
-      <canvas id="myCanvas" width="600" height="600" style="position: absolute; top: 0; left: 0;"></canvas>
+      <canvas id="trailCanvas" width="900" height="600" style="position: absolute; top: 0; left: 0;"></canvas>
+      <canvas id="myCanvas" width="900" height="600" style="position: absolute; top: 0; left: 0;"></canvas>
     </div>
 
     <div id="controls">
       <h2>Controls</h2>
       <label for="slider">Speed</label>
       <input type="range" id="slider" min="0.01" max="0.1" step="0.001" value="0.04">
-      <br><br>
+      
       <button id="pauseBtn">Pause/Play</button>
-      <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
-      <a href="simulation.html"><h1>BACK</h1></a>
+      <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+      <a href="simulation.html"><button id="back">BACK</button></a>
     </div>
     <script src="script.js"></script>
   </body>

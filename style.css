@@ -1,13 +1,26 @@
-body{
+body#body{
     display: flex;
     flex-direction: row;
     justify-content: center;
     align-items: center;
     height: 100vh;
     margin: 0;
-    background-color: #1a1a1a;
+    background-color: whitesmoke;
 
 }
+
+body#bodysim{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-color:whitesmoke;
+    min-height: 100vh;
+}
+
+
 
 div#controls {
     display: flex;
@@ -17,10 +30,29 @@ div#controls {
     font-family: monospace;
 }
 
-div{
-    position: relative;
-    width: 600px;
-    height: 600px;
+#options {
+    display: flex;
+    flex-direction: row;
+    gap: 60px;
+    justify-content: center;
+    align-items: center;
+    font-size: larger;
+}
+
+.card {
+    padding: 40px;
+    border: 1px solid #555;
+    border-radius: 10px;
+    width: 400px;
+    height: 200px;
+    cursor: pointer;
+    color: #333;
+    font-family: monospace;
+}
+
+.card:hover {
+    font-size: 19px;
+    color: black;
 }
 
 
@@ -29,4 +61,30 @@ canvas{
     top: 0;
     left: 0;
 }
+
+#controls input[type="range"]{
+    width: 200px;
+}
+
+#controls button {
+    width: 200px;
+    padding: 10px;
+    background-color: #333;
+    color: white;
+    border: 1px solid #555;
+    cursor: pointer;
+    font-family: monospace;
+    font-size: 14px;
+}
+
+a{
+    color: #aaa;
+    text-decoration: none;
+}
+
+a:hover {
+    color: rgb(33, 31, 31);
+}
+
+
 
