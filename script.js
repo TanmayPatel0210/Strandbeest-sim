@@ -6,21 +6,21 @@ const trailCtx = trailCanvas.getContext("2d")
 
 
 
-const pointA = {x:200, y:220}
-const groundAnchor = {x:200 + (100*1.5), y:220}
+const pointA = {x:230, y:325}
+const groundAnchor = {x:230 + (100*2), y:325}
 
-const rod_AB = 38 * 1.5
-const rod_BD = 83 * 1.5
-const rod_CD = 76 * 1.5
-const rod_AD = 124 * 1.5
-const rod_DE = 111 * 1.5
-const rod_CE = 79 * 1.5
-const rod_EF = 131 * 1.5
-const rod_GF = 80 * 1.5
-const rod_BG = 105 * 1.5
-const rod_CG = 49 * 1.5
-const rod_GH = 110 * 1.5
-const rod_FH = 115 * 1.5
+const rod_AB = 38 * 2
+const rod_BD = 83 * 2
+const rod_CD = 76 * 2
+const rod_AD = 124 * 2
+const rod_DE = 111 * 2
+const rod_CE = 79 * 2
+const rod_EF = 131 * 2
+const rod_GF = 80 * 2
+const rod_BG = 105 * 2
+const rod_CG = 49 * 2
+const rod_GH = 110 * 2
+const rod_FH = 115 * 2
 
 let isPaused = false
 let angle = 0
@@ -136,11 +136,16 @@ function draw()
 
 draw()
 
+
+
+
 document.getElementById("pauseBtn").addEventListener("click", function()
                                                             {
                                                                 if(isPaused == false)
                                                                 {
                                                                     isPaused = true
+                                                                    
+
                                                                 }
                                                                 else
                                                                 {

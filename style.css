@@ -11,7 +11,7 @@ body#body{
     justify-content: center;
     align-items: center;
     flex-wrap: wrap;
-    
+    gap: 100px;
     height: 100vh;
     margin: 0;
     background-color: #333;
@@ -28,7 +28,9 @@ canvas{
 
 div#canvasWrap {
     justify-content: first baseline;
-    
+    align-items: center;
+    align-content: center;
+    align-self: center;
     width: 600px;
     height: 600px;
     top: 10;
@@ -40,7 +42,7 @@ div#controls {
 
     display: flex;
     flex-direction: column;
-    margin-left: 200px;
+    margin-left: 100px;
     gap: 20px;
     color: white;
     font-family: monospace;
