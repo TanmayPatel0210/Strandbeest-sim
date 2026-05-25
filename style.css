@@ -6,43 +6,47 @@
 
 
 body#body{
+    position: relative;
     display: flex;
     flex-direction: row;
     justify-content: center;
     align-items: center;
     flex-wrap: wrap;
-    gap: 100px;
+    gap: 150px;
     height: 100vh;
-    margin: 0;
     background-color: #333;
+    left: 0;
 
 }
 
 
-canvas{
-    position: absolute;
-    top: 50px;
-    left: 50px;
-}
 
 
 div#canvasWrap {
-    justify-content: first baseline;
+    position: relative; 
+    display: flex;
+    flex-direction: column; 
+    width: 900px; 
+    height: 850px; 
     align-items: center;
-    align-content: center;
-    align-self: center;
-    width: 600px;
-    height: 600px;
-    top: 10;
+    color: white; 
 
 
+}
+
+canvas {
+    position: absolute;
+    top: 60px; 
+    left: 0;
+    
 }
 
 div#controls {
 
+    position: relative;
+    align-items: center;
     display: flex;
     flex-direction: column;
-    margin-left: 100px;
     gap: 20px;
     color: white;
     font-family: monospace;
@@ -57,16 +61,37 @@ div#controls {
 #controls button {
     width: 200px;
     padding: 10px;
-    background-color: #333;
+    background-color: transparent;
     color: white;
     border: 1px solid #555;
     cursor: pointer;
     font-family: monospace;
     font-size: 14px;
+    position: relative;
+    overflow: hidden;
+    transition: color 0.3s;
+    z-index: 1;
 }
 
+#controls button::before {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 0%;
+    background-color: #aaa;
+    transition: height 0.3s ease;
+    z-index: -1;
+}
 
+#controls button:hover::before {
+    height: 100%;
+}
 
+#controls button:hover {
+    color: #333;
+}
 
 
 
@@ -162,3 +187,14 @@ a:hover {
 
 
 
+
+/*basic leg page*/
+body#bodybasic{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    background-color: beige;
+    font-family: monospace;
+    
+}
