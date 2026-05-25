@@ -1,3 +1,10 @@
+/* 4 leg simulation  */
+
+
+
+
+
+
 body#body{
     display: flex;
     flex-direction: row;
@@ -5,9 +12,64 @@ body#body{
     align-items: center;
     height: 100vh;
     margin: 0;
-    background-color: whitesmoke;
+    background-color: #333;
 
 }
+
+
+canvas{
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+
+div#canvasWrap {
+    justify-content: first baseline;
+    position: absolute;
+    width: 600px;
+    height: 600px;
+    top: 10;
+    left: 10px;
+
+}
+
+div#controls {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    color: white;
+    font-family: monospace;
+
+}
+
+
+#controls input[type="range"]{
+    width: 200px;
+}
+
+#controls button {
+    width: 200px;
+    padding: 10px;
+    background-color: #333;
+    color: white;
+    border: 1px solid #555;
+    cursor: pointer;
+    font-family: monospace;
+    font-size: 14px;
+}
+
+
+
+
+
+/*home page*/
+
+
+
+
+
 
 body#bodysim{
     display: flex;
@@ -16,19 +78,12 @@ body#bodysim{
     align-items: center;
     height: 100vh;
     margin: 0;
-    background-color:whitesmoke;
+    background-color: beige;
     min-height: 100vh;
 }
 
 
 
-div#controls {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-    color: white;
-    font-family: monospace;
-}
 
 #options {
     display: flex;
@@ -45,37 +100,47 @@ div#controls {
     border-radius: 10px;
     width: 400px;
     height: 200px;
-    cursor: pointer;
+    cursor: pointer; /**/
     color: #333;
     font-family: monospace;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: relative; /**/
+    overflow: hidden;  /**/
+    transition: color 0.3s; 
+
+}
+
+.card h1, .card p {   /**/
+    position: relative;
+    z-index: 1;
+}
+
+.card::before {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 0%;
+    background-color: #333;
+    transition: height 0.3s ease;
+    z-index: 0;
+
+
+}
+
+.card:hover::before {
+    height: 100%;
+
 }
 
 .card:hover {
-    font-size: 19px;
-    color: black;
-}
-
-
-canvas{
-    position: absolute;
-    top: 0;
-    left: 0;
-}
-
-#controls input[type="range"]{
-    width: 200px;
-}
-
-#controls button {
-    width: 200px;
-    padding: 10px;
-    background-color: #333;
     color: white;
-    border: 1px solid #555;
-    cursor: pointer;
-    font-family: monospace;
-    font-size: 14px;
+    
 }
+
 
 a{
     color: #aaa;
