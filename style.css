@@ -35,7 +35,7 @@ body#bodysim{
     width: 400px;
     height: 200px;
     cursor: pointer; /**/
-    color: #333;
+    color: rgb(71, 53, 36);
     font-family: monospace;
     display: flex;
     flex-direction: column;
@@ -182,13 +182,14 @@ div#controls {
     height: 100%;
 }
 
-#controls button:hover {
+#controls button:active {
     
     border-bottom: 3px solid #555;
     border-right: 3px solid #555;
     border-top: 3px solid#555;
     border-left: 3px solid#555;
     height: 38px;
+    
 }
 
 
@@ -219,6 +220,3 @@ a button {
     cursor: pointer;
 }
 
-a button:hover {
-    border: 0px ;
-}

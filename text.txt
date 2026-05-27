@@ -1,0 +1,5 @@
+rename the home html to backup
+build the new index.html
+with nav and section tags 
+move the canvas and buttons from legs to section 4
+connect the css and javascript to the page
