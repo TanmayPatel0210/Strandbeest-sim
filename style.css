@@ -22,6 +22,7 @@ body#bodysim{
 #options {
     display: flex;
     flex-direction: row;
+    flex-wrap: wrap;
     gap: 60px;
     justify-content: center;
     align-items: center;
@@ -32,8 +33,8 @@ body#bodysim{
     padding: 40px;
     border: 1px solid #555;
     border-radius: 10px;
-    width: 400px;
-    height: 200px;
+    width: 250px;
+    height: 125px;
     cursor: pointer; /**/
     color: rgb(71, 53, 36);
     font-family: monospace;
@@ -137,10 +138,10 @@ div#controls {
     align-items: center;
     display: flex;
     flex-direction: column;
-    gap: 20px;
+    gap: 10px;
     color: white;
     font-family: monospace;
-
+    margin-top: 20px;
 }
 
 
@@ -198,11 +199,16 @@ div#controls {
 
 /*basic leg page*/
 body#bodybasic{
+    position: relative;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    background-color: beige;
+    flex-wrap: wrap;
+    top: 0;
+    gap: 100px;
+    height: 100vh;
+    background-color: #333;
     font-family: monospace;
     
 }
