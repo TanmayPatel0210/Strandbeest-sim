@@ -125,7 +125,7 @@ div#canvasWrap {
 
 }
 
-canvas {
+#myCanvas, #trailCanvas {
     position: absolute;
     top: 60px; 
     left: 0;
@@ -231,18 +231,30 @@ a button {
 
 /*Story*/
 
+body#bodycalc {
+    background-color: #000;
+}
+
 .story {
-    max-width: 800px;
+    height: 110%;
+    font-family: monospace;
+    max-width: 900px;
+    width: 90%;
     margin: 0 auto;
-    padding: 100px 20px;
+    padding: 80px 20px;
+    background-color: #000000;
 }
 
 .scroll {
+
     min-height: 70vh;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: right;
+    font-size: 20px;
     opacity: 0;
+    color: chartreuse;
+    text-shadow: #333;
     transform: translateY(50px);
     transition: all 1s ease-out;
 }
@@ -250,4 +262,46 @@ a button {
 .scroll.visible {
     opacity: 1;
     transform: translateY(0px);
+}
+
+#tableandcanvas {
+    display: flex;
+    flex-direction: row;
+    gap: 40px;
+    align-items: flex-start;
+}
+
+#holytable {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    color: chartreuse;
+    
+}
+#holytable th, #holytable td {
+        padding: 8px 12px;
+        border-bottom: 1px solid #222;
+        text-align: left;
+    }
+
+#holytable th {
+    color: white;
+    border-bottom: 1px solid #444;
+}
+
+#holytable tr :hover {
+    background-color: #111;
+    text-decoration: underline;
+}
+
+#legdiagram {
+    position: relative;
+    background-color: #111;
+    border-radius: 10px;
+    border: 1px solid #333;
+
+}
+
+#holytable td {
+    color: white;
 }
