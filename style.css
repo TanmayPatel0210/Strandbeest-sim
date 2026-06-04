@@ -147,6 +147,7 @@ div#controls {
 
 #controls input[type="range"]{
     width: 200px;
+    cursor: crosshair;
 }
 
 #controls button {
