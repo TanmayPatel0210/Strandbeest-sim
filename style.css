@@ -12,7 +12,7 @@ body#bodysim{
     align-items: center;
     height: 100vh;
     margin: 0;
-    background-color: beige;
+    background-color: antiquewhite;
     min-height: 100vh;
 }
 
@@ -33,8 +33,8 @@ body#bodysim{
     padding: 40px;
     border: 1px solid #555;
     border-radius: 10px;
-    width: 250px;
-    height: 125px;
+    width: 350px;
+    height: 215px;
     cursor: pointer; /**/
     color: rgb(71, 53, 36);
     font-family: monospace;
@@ -144,6 +144,19 @@ div#controls {
     margin-top: 20px;
 }
 
+div#control {
+
+    position: relative;
+    align-items: center;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    width: 222px;
+    gap: 10px;
+    color: white;
+    font-family: monospace;
+    margin-top: 20px;
+}
 
 #controls input[type="range"]{
     width: 200px;
@@ -305,4 +318,40 @@ body#bodycalc {
 
 #holytable td {
     color: white;
+}
+
+
+/*thanksss*/
+
+body#bodythank {
+    background-color: antiquewhite;
+}
+
+.storys {
+    height: 110%;
+    font-family: monospace;
+    max-width: 900px;
+    width: 90%;
+    margin: 0 auto;
+    padding: 80px 20px;
+    background-color: antiquewhite;
+}
+
+.scrolls {
+
+    min-height: 70vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: right;
+    font-size: 20px;
+    opacity: 0;
+    color: rgb(61, 37, 0);
+    text-shadow: #333;
+    transform: translateY(50px);
+    transition: all 1s ease-out;
+}
+
+.scrolls.visible {
+    opacity: 1;
+    transform: translateY(0px);
 }
