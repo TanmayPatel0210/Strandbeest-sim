@@ -31,6 +31,9 @@ Javascript for the actual calculations and drawing
 Circle-circle intersection formula for calculating the points
 simple trignometry for drawing
 
+Use of AI:
+I did use AI, not for the website but for the syntaxes. As I mentioned before, I learnt all languages from scratch for this project, so whenever I hit a wall I asked AI's help for understanding what syntax to use for which situation. I learnt the languages from AI but each and every line of code has been typed out by me. Every idea of the design and look of the website came from me.
+
 Acknowledgements:
 Theo Jansen for the mechnism 
 Hack Club #horizons for the Opportunity
